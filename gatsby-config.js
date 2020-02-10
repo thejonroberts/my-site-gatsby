@@ -6,6 +6,7 @@ module.exports = {
       'This is the personal site of Jon Roberts. No, not that one. Yeah, the software developer - that Jon Roberts.',
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
