@@ -3,4 +3,24 @@
 @tailwind components;
 /* purgecss end ignore */
 
+/* base element styles */
+h1 {
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-xl;
+}
+
+h3 {
+  @apply text-lg;
+}
+
+a {
+  @apply text-blue-600;
+}
+
+/* custom component classes */
+
+/* keep utilities after base styles & custom components */
 @tailwind utilities;
