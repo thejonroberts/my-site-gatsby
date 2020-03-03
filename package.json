@@ -30,11 +30,14 @@
     "eslint-config-react-app": "^5.0.2",
     "eslint-loader": "^3.0.2",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "gatsby-plugin-eslint": "^2.0.8",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.18.2",
-    "stylelint-config-recommended": "^3.0.0"
+    "stylelint": "^13.2.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-standard": "^20.0.0"
   },
   "keywords": [
     "gatsby"
@@ -44,6 +47,8 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint": "./node_modules/.bin/eslint . --ext js,jsx",
+    "stylelint": "node_modules/.bin/stylelint ./src/ --config stylelint.config.js",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
