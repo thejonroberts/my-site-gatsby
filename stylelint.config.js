@@ -1,5 +1,7 @@
 module.exports = {
-  extends: ['stylelint-config-recommended'],
+  files: ['src/**/*.jsx', 'src/**/*.css'],
+  ignoreFiles: ['node_modules/**', 'public/**', '.cache/**', '**/*.png', '**/*.json'],
+  extends: ['stylelint-config-standard'],
   rules: {
     'at-rule-no-unknown': [
       true,
