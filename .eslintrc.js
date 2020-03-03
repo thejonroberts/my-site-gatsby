@@ -10,17 +10,16 @@ module.exports = {
     node: true,
     browser: true,
   },
+
   plugins: [
     'react',
     'jsx-a11y'
   ],
-
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/strict',
   ],
-
   ignorePatterns: [
     'node_modules/**/*',
     'public/**/*',
@@ -50,8 +49,10 @@ module.exports = {
       { name: 'Link', linkAttribute: 'to' }
     ],
   },
+
   rules: {
     strict: 0,
     'comma-dangle': ['error', 'always-multiline'],
+    'no-unused-vars': ["error", { "argsIgnorePattern": "^_" }]
   }
 }
