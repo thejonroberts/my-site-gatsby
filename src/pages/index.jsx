@@ -31,10 +31,6 @@ const IndexPage = () => (
         GitHub
       </a>
       {` `}
-      <a className='px-1' href='https://twitter.com/the_jon_roberts'>
-        Twitter
-      </a>
-      {` `}
       <a className='px-1' href='https://www.linkedin.com/in/jon-roberts'>
         LinkedIn
       </a>
