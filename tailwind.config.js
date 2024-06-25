@@ -1,6 +1,12 @@
+/** @type {import('tailwindcss').Config} */
+
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  content: [
+    `./src/pages/**/*.{js,jsx,ts,tsx}`,
+    `./src/components/**/*.{js,jsx,ts,tsx}`,
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -14,7 +20,7 @@ module.exports = {
     colors: {
       primary: '#631D76',
       secondary: '#C4D7F2',
-      accent: '#99D5C9',
+      accent: '#631D76',
       white: '#FCFCFC',
       black: '#111014',
     },

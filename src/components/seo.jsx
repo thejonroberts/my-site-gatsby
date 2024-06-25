@@ -1,88 +1,32 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from "react"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+export const Seo = ({ title, description, pathname, children }) => {
+  const { title: defaultTitle, description: defaultDescription, siteUrl } = useSiteMetadata()
+  console.log({ title })
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `,
-  )
-
-  const metaDescription = description || site.siteMetadata.description
+  const seo = {
+    title: title || defaultTitle,
+    description: description || defaultDescription,
+    url: `${siteUrl}${pathname || ``}`,
+  }
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    <>
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description} />
+      <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>" />
+      {children}
+    </>
   )
 }
 
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
+export default Seo
 
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-}
-
-export default SEO
+// TODO: MAYBE REMOVE
+// Seo.propTypes = {
+//   title: PropTypes.string,
+//   description: PropTypes.string,
+//   pathname: PropTypes.string,
+//   children: PropTypes.arrayOf(PropTypes.node),
+// }

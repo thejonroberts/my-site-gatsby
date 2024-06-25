@@ -20,8 +20,9 @@ Header.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
-  siteTitle: `jon roberts: a developer`,
-}
+// TODO: use default value instead
+// Header.defaultProps = {
+//   siteTitle: `jon roberts: a developer`,
+// }
 
 export default Header
