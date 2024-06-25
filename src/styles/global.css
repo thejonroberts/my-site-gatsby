@@ -10,3 +10,7 @@ body {
 header {
   background-image: url('../images/squiggle-500.png');
 }
+
+a {
+  @apply text-accent
+}
