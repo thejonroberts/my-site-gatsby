@@ -1,28 +1,21 @@
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
+import { useSiteMetadata } from '../hooks/use-site-metadata'
 
-const Header = ({ siteTitle }) => (
-  <header className='bg-primary py-4'>
+const Header = ({ pageTitle }) => {
+  const { title: defaultTitle } = useSiteMetadata()
+
+  return (<header className='bg-primary py-4'>
     <div className='container'>
       <div className='md:px-4 lg:px-6 xl:px-20'>
-        <h1>
+        <h1 className='text-3xl font-bold'>
           <Link to='/' className='text-white'>
-            {siteTitle}
+            {pageTitle || defaultTitle}
           </Link>
         </h1>
       </div>
     </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+  </header>)
 }
-
-// TODO: use default value instead
-// Header.defaultProps = {
-//   siteTitle: `jon roberts: a developer`,
-// }
 
 export default Header
