@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  @apply font-body bg-white leading-relaxed text-black text-lg subpixel-antialiased;
+}
+
+a {
+  @apply text-primary
+}
