@@ -7,10 +7,6 @@ body {
   @apply font-body bg-white leading-relaxed text-black text-lg subpixel-antialiased;
 }
 
-header {
-  background-image: url('../images/squiggle-500.png');
-}
-
 a {
-  @apply text-accent
+  @apply text-primary
 }
