@@ -1,6 +1,6 @@
 {
   "name": "jon-roberts-site",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "description": "A simple personal website built with Gatsby",
   "author": "Jon Roberts",
@@ -23,9 +23,5 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.4.4"
-  },
-  "resolutions": {
-    "webpack-dev-middleware": "^5.3.4",
-    "axios": "^0.28.0"
   }
 }
